@@ -1,1 +1,1 @@
-{"000.0_____pragma.hpprog": {"min": 0, "max": 1}, "000.1_____VARS.hpprog": {"min": 1, "max": 23}, "000.2_____FUNS.hpprog": {"min": 23, "max": 27}, "001_______FUNC_GET_STRING_CHESS.hpprog": {"min": 27, "max": 60}, "100.00_COGO_VIEW.hpprog": {"min": 60, "max": 78}}
+{"000.0_____pragma.hpprog": {"min": 0, "max": 1}, "000.1_____VARS.hpprog": {"min": 1, "max": 29}, "000.2_____FUNS.hpprog": {"min": 29, "max": 37}, "001_______SPLASH.hpprog": {"min": 37, "max": 54}, "010_______FUNC_GET_STRING_CHESS.hpprog": {"min": 54, "max": 87}, "100.00_COGO_VIEW.hpprog": {"min": 87, "max": 106}}

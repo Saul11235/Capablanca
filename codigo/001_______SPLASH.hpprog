@@ -1,0 +1,17 @@
+
+EXPORT SPLASH_SCREEN()
+BEGIN
+
+ RECT_P(0,0,320,240,NEGRO);
+ TEXTOUT_P("Capablanca",145,95,7,BLANCO);
+
+ RECT_P(G1,0,0,320,240,RGB(0,0,0));
+ TEXTOUT_P("[i] https://github.com/Saul11235/CapablancaPrime",1,228,1,BLANCO );
+
+ WAIT(0.5);
+
+END;
+
+
+
+

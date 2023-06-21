@@ -1,6 +1,7 @@
 VIEW "Capablanca",START()
 BEGIN
-  msgbox("hola mundo");
+  
+  SPLASH_SCREEN();
 
   LOCAL Textoo:="";
   LOCAL CONT:=-6;

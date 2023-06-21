@@ -1,4 +1,8 @@
 
+// Visualizacion
+LOCAL SPLASH_SCREEN();
+
 // Funciones para dibujar tablero
 LOCAL GET_CHESS_STRING(codigo);
+
 
