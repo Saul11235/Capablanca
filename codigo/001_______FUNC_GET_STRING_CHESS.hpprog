@@ -1,0 +1,33 @@
+// funcion que devuelve el string
+
+EXPORT GET_CHESS_STRING(codigo)
+BEGIN
+
+  CASE
+     // ESPACIO EN BLANCO
+    IF  codigo=0  THEN  RETURN(char(32));  END;
+     // PEON 1
+    IF  codigo= 1 THEN  RETURN(char(9817));  END;   
+    IF  codigo=-1 THEN  RETURN(char(9823));  END;   
+     // ALFIL 2 
+    IF  codigo= 2 THEN  RETURN(char(9815));  END;   
+    IF  codigo=-2 THEN  RETURN(char(9821));  END;   
+     // CABALLO 3 
+    IF  codigo= 3 THEN  RETURN(char(9816));  END;   
+    IF  codigo=-3 THEN  RETURN(char(9822));  END;   
+     // TORRE 4
+    IF  codigo= 4 THEN  RETURN(char(9814));  END;   
+    IF  codigo=-4 THEN  RETURN(char(9820));  END;
+     // DAMA 5
+    IF  codigo= 5 THEN  RETURN(char(9812));  END;   
+    IF  codigo=-5 THEN  RETURN(char(9818));  END;
+     // REY 6
+    IF  codigo= 6 THEN  RETURN(char(9813));  END;   
+    IF  codigo=-6 THEN  RETURN(char(9819));  END;
+
+  END;
+
+END;
+
+
+

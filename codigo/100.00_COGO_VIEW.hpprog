@@ -1,6 +1,18 @@
-
-VIEW "COGO prime illarisoft",START()
+VIEW "Capablanca",START()
 BEGIN
-  saludo_inicial();
   msgbox("hola mundo");
+
+  LOCAL Textoo:="";
+  LOCAL CONT:=-6;
+
+  WHILE CONT<7 DO
+    Textoo:=Textoo+GET_CHESS_STRING(CONT);
+    CONT:=CONT+1;
+  END; 
+
+  MSGBOX(Textoo);
+
+  
+
+  // msgbox(GET_CHESS_STRING(0));
 END;

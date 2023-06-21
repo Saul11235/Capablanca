@@ -1,1 +1,4 @@
-LOCAL saludo_inicial();
+
+// Funciones para dibujar tablero
+LOCAL GET_CHESS_STRING(codigo);
+

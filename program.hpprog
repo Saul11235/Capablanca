@@ -1,0 +1,78 @@
+#pragma mode( separator(.,;) integer(h32) )
+// Tablero ordenado 
+// esto consiste en una lista donde
+// 0 es una celda vacia  
+// positivo ficha blanca  -4 -3 -2 -5 -6 -2 -3 -4
+// negativo ficha negra   -1 -1 -1 -1 -1 -1 -1 -1
+// 1  -1  peon             0  0  0  0  0  0  0  0
+// 2  -2  alfil            0  0  0  0  0  0  0  0
+// 3  -3  caballo          0  0  0  0  0  0  0  0
+// 4  -4  torre            0  0  0  0  0  0  0  0
+// 5  -5  Dama             1  1  1  1  1  1  1  1
+// 6  -6  Rey              4  3  2  5  6  2  3  4
+
+LOCAL var_tablero:= {};   // {-4 -3 .....}
+
+// Si es 1 es turno del Blanco
+// Si es 0 es turno del Negro
+
+LOCAL var_turno:=0;       
+
+
+
+
+
+// Funciones para dibujar tablero
+LOCAL GET_CHESS_STRING(codigo);
+
+// funcion que devuelve el string
+
+EXPORT GET_CHESS_STRING(codigo)
+BEGIN
+
+  CASE
+     // ESPACIO EN BLANCO
+    IF  codigo=0  THEN  RETURN(char(32));  END;
+     // PEON 1
+    IF  codigo= 1 THEN  RETURN(char(9817));  END;   
+    IF  codigo=-1 THEN  RETURN(char(9823));  END;   
+     // ALFIL 2 
+    IF  codigo= 2 THEN  RETURN(char(9815));  END;   
+    IF  codigo=-2 THEN  RETURN(char(9821));  END;   
+     // CABALLO 3 
+    IF  codigo= 3 THEN  RETURN(char(9816));  END;   
+    IF  codigo=-3 THEN  RETURN(char(9822));  END;   
+     // TORRE 4
+    IF  codigo= 4 THEN  RETURN(char(9814));  END;   
+    IF  codigo=-4 THEN  RETURN(char(9820));  END;
+     // DAMA 5
+    IF  codigo= 5 THEN  RETURN(char(9812));  END;   
+    IF  codigo=-5 THEN  RETURN(char(9818));  END;
+     // REY 6
+    IF  codigo= 6 THEN  RETURN(char(9813));  END;   
+    IF  codigo=-6 THEN  RETURN(char(9819));  END;
+
+  END;
+
+END;
+
+
+
+VIEW "Capablanca",START()
+BEGIN
+  msgbox("hola mundo");
+
+  LOCAL Textoo:="";
+  LOCAL CONT:=-6;
+
+  WHILE CONT<7 DO
+    Textoo:=Textoo+GET_CHESS_STRING(CONT);
+    CONT:=CONT+1;
+  END; 
+
+  MSGBOX(Textoo);
+
+  
+
+  // msgbox(GET_CHESS_STRING(0));
+END;
