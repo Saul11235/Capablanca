@@ -21,12 +21,30 @@ LOCAL var_turno:=0;
 
 
 // --------------------------------------------------
-LOCAL BLANCO:=RGB(255,255,255);
-LOCAL NEGRO :=RGB(0,0,0);
-LOCAL GRIS  :=RGB(100,100,100);
+// COLORES
+LOCAL BLANCO     :=RGB(255,255,255);
+LOCAL NEGRO      :=RGB(0,0,0);
+LOCAL ROJO       :=RGB(200,0,0);
+LOCAL ROJO_CLARO :=RGB(220,150,150);
+LOCAL CELESTE    :=RGB(100,100,220);
+LOCAL AMARILLO   :=RGB(220,220,150);
+LOCAL GRIS       :=RGB(100,100,100);
 
 
 // --------------------------------------------------
+// COLORES TABLERO
+// estos seran los colores que se usaran en el tablero
+
+LOCAL FondoApp   := GRIS;
+LOCAL CAS_oscura := ROJO_CLARO;
+LOCAL CAS_clara  := BLANCO;
+LOCAL ColorFicha := NEGRO;
+LOCAL MarcaFicha := CELESTE; 
+LOCAL MarcaCaptura:=AMARILLO;
+
+
+
+
 
 // Visualizacion
 LOCAL SPLASH_SCREEN();
@@ -35,15 +53,98 @@ LOCAL SPLASH_SCREEN();
 LOCAL GET_CHESS_STRING(codigo);
 
 
+// Esta funcion almacena una lista que tiene los caracteres
+// para poder jugar capablanca en otros idiomas
+
+// NOTA usar como referencia el Español para las traducciones
+// a otros idiomas
+
+LOCAL cadenasTexto:={
+
+  // 1 ENGLISH
+  {},
+  // 2 CHINO
+  {},
+  // 3 FRANCES
+  {},
+  // 4 ALEMAN
+  {},
+  // 5 ESPAÑOL   --> Ñ <--
+  { "Salir",             //1
+    "Juegan Blancas",    //2
+    "Juegan Negras",     //3
+    "Turno de HP",       //4
+    "Turno de Humano",   //5
+    "Jaque mate",        //6
+    "tablas",            //7
+    "Hp vs humano",      //8
+    "Humano vs humano",  //9
+    "Hp vs Hp"        ,  //10
+    "Opciones",          //11
+    "Regresar",          //12
+    "NuevaPartida",      //13
+    "Jugar con blancas", //14
+    "Jugar con negras",  //15
+    "Jugar con blancas-negras",   //15
+    "Guardar partida",            //11
+    "Abrir partida",              //11
+    "Ninguna partida encontrada", //11
+    "Hp nivel ",   //11
+
+
+  },
+
+};
+
 
 EXPORT SPLASH_SCREEN()
 BEGIN
 
  RECT_P(0,0,320,240,NEGRO);
- TEXTOUT_P("Capablanca",145,95,7,BLANCO);
+ TEXTOUT_P("Capablanca",145,105,7,BLANCO);
+ 
+  // Dibujanod un tablero en el splash
+  LOCAL inisplashx:=30;
+  LOCAL inisplashy:=70;
+  LOCAL anchoCasilla:=20;
+  LOCAL kernX:=-1;
+  LOCAL kernY:=-3;
+  LOCAL casillaClara:=0; // 1 si es oscura
+  LOCAL Limite:=5;
+  LOCAL contador:=0;
+  LOCAL contador2:=0;
+ 
+  WHILE contador<Limite DO
+     contador2:=0;
+     WHILE contador2<Limite DO
+        //--------------------
+        //  Dibuja tablero en pantalla de splash screen
+
+          LOCAL colorCasillaSplash:= CAS_oscura;
+           IF casillaClara THEN 
+              colorCasillaSplash:= CAS_clara;
+              casillaClara:=0;
+           ELSE   
+              casillaClara:=1;
+           END; 
+
+           LOCAL xcasilla:=inisplashx+anchoCasilla*contador;
+           LOCAL ycasilla:=inisplashy+anchoCasilla*contador2;
+
+           RECT_P(xcasilla,ycasilla,xcasilla+anchoCasilla,ycasilla+anchoCasilla,colorCasillaSplash);
+           LOCAL codFicha=RANDINT(-6,6)*RANDINT();
+           TEXTOUT_P(GET_CHESS_STRING(codFicha),xcasilla+kernX,ycasilla+kernY,7,ColorFicha);
+           
+        //--------------------
+        contador2:=contador2+1;
+     END;
+     contador:=contador+1;
+  END;
+
+   // Diagrama de fichas
 
  RECT_P(G1,0,0,320,240,RGB(0,0,0));
- TEXTOUT_P("[i] https://github.com/Saul11235/CapablancaPrime",1,228,1,BLANCO );
+ TEXTOUT_P("[i] https://github.com/Saul11235/CapablancaPrime",20,225,2,BLANCO );
 
  WAIT(0.5);
 
@@ -98,7 +199,7 @@ BEGIN
     CONT:=CONT+1;
   END; 
 
-  MSGBOX(Textoo);
+  //MSGBOX(Textoo);
 
   
 

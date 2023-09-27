@@ -20,9 +20,27 @@ LOCAL var_turno:=0;
 
 
 // --------------------------------------------------
-LOCAL BLANCO:=RGB(255,255,255);
-LOCAL NEGRO :=RGB(0,0,0);
-LOCAL GRIS  :=RGB(100,100,100);
+// COLORES
+LOCAL BLANCO     :=RGB(255,255,255);
+LOCAL NEGRO      :=RGB(0,0,0);
+LOCAL ROJO       :=RGB(200,0,0);
+LOCAL ROJO_CLARO :=RGB(220,150,150);
+LOCAL CELESTE    :=RGB(100,100,220);
+LOCAL AMARILLO   :=RGB(220,220,150);
+LOCAL GRIS       :=RGB(100,100,100);
 
 
 // --------------------------------------------------
+// COLORES TABLERO
+// estos seran los colores que se usaran en el tablero
+
+LOCAL FondoApp   := GRIS;
+LOCAL CAS_oscura := ROJO_CLARO;
+LOCAL CAS_clara  := BLANCO;
+LOCAL ColorFicha := NEGRO;
+LOCAL MarcaFicha := CELESTE; 
+LOCAL MarcaCaptura:=AMARILLO;
+
+
+
+

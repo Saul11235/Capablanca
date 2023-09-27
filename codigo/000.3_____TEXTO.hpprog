@@ -1,0 +1,46 @@
+// Esta funcion almacena una lista que tiene los caracteres
+// para poder jugar capablanca en otros idiomas
+
+// NOTA usar como referencia el Español para las traducciones
+// a otros idiomas
+
+LOCAL cadenasTexto:={
+
+  // 1 ENGLISH
+  {},
+  {
+},
+  {
+},
+
+  {
+},
+
+  {
+    "ESPAÑOL",           //1
+    "Salir",             //1
+    "Juegan Blancas",    //2
+    "Juegan Negras",     //3
+    "Turno de HP",       //4
+    "Turno de Humano",   //5
+    "Jaque mate",        //6
+    "tablas",            //7
+    "Hp vs humano",      //8
+    "Humano vs humano",  //9
+    "Hp vs Hp"        ,  //10
+    "Opciones",          //11
+    "Regresar",          //12
+    "NuevaPartida",      //13
+    "Jugar con blancas", //14
+    "Jugar con negras",  //15
+    "Jugar con blancas-negras",   //15
+    "Guardar partida",            //11
+    "Abrir partida",              //11
+    "Ninguna partida encontrada", //11
+    "Hp nivel ",   //11
+
+
+  },
+
+};
+

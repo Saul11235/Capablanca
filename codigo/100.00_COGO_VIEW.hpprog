@@ -11,7 +11,7 @@ BEGIN
     CONT:=CONT+1;
   END; 
 
-  MSGBOX(Textoo);
+  //MSGBOX(Textoo);
 
   
 
